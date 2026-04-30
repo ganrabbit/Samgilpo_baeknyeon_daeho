@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>전체 메뉴 - 삼길포항 드론배달</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Apple SD Gothic Neo', '맑은 고딕', sans-serif; background: #f5f4f0; color: #1a1a1a; }
+  .hero { background: #1a1a2e; padding: 2rem 1.25rem 1.5rem; text-align: center; }
+  .hero h1 { color: #fff; font-size: 22px; font-weight: 600; margin-bottom: 4px; }
+  .hero p { color: rgba(255,255,255,0.55); font-size: 13px; }
+  .tabs { display: flex; background: #fff; position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #e0e0e0; }
+  .tab { flex: 1; padding: 13px 4px; font-size: 13px; font-weight: 600; color: #999; border: none; background: none; cursor: pointer; border-bottom: 2px solid transparent; }
+  .tab.on { color: #1a1a2e; border-bottom-color: #1a1a2e; }
+  .section { display: none; padding: 0 1rem 2rem; }
+  .section.on { display: block; }
+  .cat-label { font-size: 11px; font-weight: 700; color: #999; letter-spacing: 0.1em; padding: 1.5rem 0 0.5rem; border-bottom: 1px solid #ddd; }
+  .item { display: flex; justify-content: space-between; align-items: baseline; padding: 11px 0; border-bottom: 1px solid #efefef; }
+  .item:last-child { border-bottom: none; }
+  .item-name { font-size: 15px; color: #1a1a1a; flex: 1; }
+  .item-sub { font-size: 12px; color: #aaa; display: block; margin-top: 2px; }
+  .item-price { font-size: 14px; font-weight: 600; color: #1a1a2e; white-space: nowrap; margin-left: 12px; text-align: right; }
+  .price-row { display: block; font-size: 12px; color: #555; font-weight: 500; }
+  .note { font-size: 12px; color: #aaa; padding: 14px 0 4px; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>전체 메뉴</h1>
+  <p>삼길포항 드론배달 메뉴판</p>
+</div>
+
+<div class="tabs">
+  <button class="tab on" onclick="show('cafe',this)">카페</button>
+  <button class="tab" onclick="show('daeho',this)">대호반점</button>
+  <button class="tab" onclick="show('igane',this)">이가네</button>
+</div>
+
+<!-- 카페 -->
+<div id="cafe" class="section on">
+  <div class="cat-label">커피</div>
+  <div class="item"><div><span class="item-name">아메리카노</span><span class="item-sub">H / I</span></div><div class="item-price">5,000원</div></div>
+  <div class="item"><div><span class="item-name">카페라떼</span><span class="item-sub">H / I</span></div><div class="item-price">5,500원</div></div>
+  <div class="item"><div><span class="item-name">바닐라라떼</span><span class="item-sub">H / I</span></div><div class="item-price">6,000원</div></div>
+  <div class="item"><div><span class="item-name">카페모카</span><span class="item-sub">H / I</span></div><div class="item-price">6,000원</div></div>
+  <div class="item"><div><span class="item-name">마끼아또</span><span class="item-sub">H / I</span></div><div class="item-price">6,000원</div></div>
+  <div class="item"><div><span class="item-name">1L 아메리카노</span></div><div class="item-price">8,000원</div></div>
+  <div class="item"><div><span class="item-name">다방커피</span></div><div class="item-price">4,000원</div></div>
+
+  <div class="cat-label">에이드 · 스무디</div>
+  <div class="item"><div><span class="item-name">에이드</span><span class="item-sub">레몬 / 자몽 / 청포도</span></div><div class="item-price">5,500원</div></div>
+  <div class="item"><div><span class="item-name">요거트 스무디</span><span class="item-sub">플레인 / 딸기 / 망고 / 블루베리</span></div><div class="item-price">6,000원</div></div>
+
+  <div class="cat-label">차</div>
+  <div class="item"><div><span class="item-name">차</span><span class="item-sub">레몬 / 자몽</span></div><div class="item-price">4,500원</div></div>
+  <div class="item"><div><span class="item-name">라떼</span><span class="item-sub">초코 / 쑥 / 밤</span></div><div class="item-price">6,000원</div></div>
+  <div class="item"><div><span class="item-name">복숭아 아이스티</span></div><div class="item-price">4,000원</div></div>
+  <div class="item"><div><span class="item-name">캐모마일</span><span class="item-sub">H / I</span></div><div class="item-price">6,000원</div></div>
+  <div class="item"><div><span class="item-name">히비스커스</span><span class="item-sub">H / I</span></div><div class="item-price">6,000원</div></div>
+  <div class="item"><div><span class="item-name">루이보스</span><span class="item-sub">H / I</span></div><div class="item-price">6,000원</div></div>
+  <div class="item"><div><span class="item-name">얼그레이</span><span class="item-sub">H / I</span></div><div class="item-price">6,000원</div></div>
+  <div class="item"><div><span class="item-name">유자차</span><span class="item-sub">H / I</span></div><div class="item-price">5,000원</div></div>
+  <div class="item"><div><span class="item-name">생강차</span><span class="item-sub">H / I</span></div><div class="item-price">5,000원</div></div>
+  <div class="item"><div><span class="item-name">에이드</span><span class="item-sub">자몽 / 레몬</span></div><div class="item-price">6,000원</div></div>
+</div>
+
+<!-- 대호반점 -->
+<div id="daeho" class="section">
+  <div class="cat-label">면류</div>
+  <div class="item"><div><span class="item-name">짜장</span></div><div class="item-price">7,000원</div></div>
+  <div class="item"><div><span class="item-name">간짜장</span></div><div class="item-price">9,000원</div></div>
+  <div class="item"><div><span class="item-name">고추짜장</span></div><div class="item-price">10,000원</div></div>
+  <div class="item"><div><span class="item-name">삼선짜장</span></div><div class="item-price">10,000원</div></div>
+  <div class="item"><div><span class="item-name">짬뽕</span></div><div class="item-price">9,000원</div></div>
+  <div class="item"><div><span class="item-name">굴짬뽕</span></div><div class="item-price">12,000원</div></div>
+  <div class="item"><div><span class="item-name">매운짬뽕</span></div><div class="item-price">9,000원</div></div>
+  <div class="item"><div><span class="item-name">해물짬뽕</span></div><div class="item-price">12,000원</div></div>
+  <div class="item"><div><span class="item-name">백짬뽕</span></div><div class="item-price">12,000원</div></div>
+  <div class="item"><div><span class="item-name">우동</span></div><div class="item-price">9,000원</div></div>
+  <div class="item"><div><span class="item-name">삼선우동</span></div><div class="item-price">12,000원</div></div>
+  <div class="item"><div><span class="item-name">울면</span></div><div class="item-price">10,000원</div></div>
+
+  <div class="cat-label">밥류</div>
+  <div class="item"><div><span class="item-name">짜장밥</span></div><div class="item-price">9,000원</div></div>
+  <div class="item"><div><span class="item-name">짬뽕밥</span></div><div class="item-price">10,000원</div></div>
+  <div class="item"><div><span class="item-name">굴탕밥</span></div><div class="item-price">12,000원</div></div>
+  <div class="item"><div><span class="item-name">해물짬뽕밥</span></div><div class="item-price">12,000원</div></div>
+  <div class="item"><div><span class="item-name">양송이덮밥</span></div><div class="item-price">10,000원</div></div>
+  <div class="item"><div><span class="item-name">대호특밥</span></div><div class="item-price">10,000원</div></div>
+  <div class="item"><div><span class="item-name">고추잡채밥</span></div><div class="item-price">12,000원</div></div>
+  <div class="item"><div><span class="item-name">잡탕밥</span></div><div class="item-price">15,000원</div></div>
+  <div class="item"><div><span class="item-name">유산슬밥</span></div><div class="item-price">15,000원</div></div>
+  <div class="item"><div><span class="item-name">육개장</span></div><div class="item-price">9,000원</div></div>
+  <div class="item"><div><span class="item-name">갈비탕</span></div><div class="item-price">9,000원</div></div>
+
+  <div class="cat-label">볶음밥</div>
+  <div class="item"><div><span class="item-name">볶음밥</span></div><div class="item-price">9,000원</div></div>
+  <div class="item"><div><span class="item-name">새우볶음밥</span></div><div class="item-price">10,000원</div></div>
+  <div class="item"><div><span class="item-name">삼선볶음밥</span></div><div class="item-price">12,000원</div></div>
+  <div class="item"><div><span class="item-name">오므라이스</span></div><div class="item-price">11,000원</div></div>
+  <div class="item"><div><span class="item-name">잡채밥</span></div><div class="item-price">10,000원</div></div>
+  <div class="item"><div><span class="item-name">마파두부밥</span></div><div class="item-price">10,000원</div></div>
+  <div class="item"><div><span class="item-name">오징어덮밥</span></div><div class="item-price">10,000원</div></div>
+  <div class="item"><div><span class="item-name">제육덮밥</span></div><div class="item-price">10,000원</div></div>
+
+  <div class="cat-label">탕수육 · 요리</div>
+  <div class="item"><div><span class="item-name">탕수육</span><span class="item-sub">일반</span></div><div class="item-price"><span class="price-row">小 20,000원</span><span class="price-row">中 25,000원</span><span class="price-row">大 30,000원</span></div></div>
+  <div class="item"><div><span class="item-name">탕수육</span><span class="item-sub">칠리 / 사천</span></div><div class="item-price"><span class="price-row">小 25,000원</span><span class="price-row">中 30,000원</span><span class="price-row">大 35,000원</span></div></div>
+  <div class="item"><div><span class="item-name">깐풍기</span></div><div class="item-price">30,000원</div></div>
+  <div class="item"><div><span class="item-name">라조기</span></div><div class="item-price">30,000원</div></div>
+  <div class="item"><div><span class="item-name">깐풍육</span></div><div class="item-price">30,000원</div></div>
+  <div class="item"><div><span class="item-name">라조육</span></div><div class="item-price">30,000원</div></div>
+  <div class="item"><div><span class="item-name">깐쇼새우</span></div><div class="item-price">35,000원</div></div>
+  <div class="item"><div><span class="item-name">깐풍새우</span></div><div class="item-price">35,000원</div></div>
+  <div class="item"><div><span class="item-name">양장피</span></div><div class="item-price">35,000원</div></div>
+  <div class="item"><div><span class="item-name">팔보채</span></div><div class="item-price">35,000원</div></div>
+  <div class="item"><div><span class="item-name">고추잡채</span></div><div class="item-price">35,000원</div></div>
+  <div class="item"><div><span class="item-name">유산슬</span></div><div class="item-price">45,000원</div></div>
+  <div class="item"><div><span class="item-name">해물누룽지탕</span></div><div class="item-price">45,000원</div></div>
+
+  <div class="cat-label">사이드</div>
+  <div class="item"><div><span class="item-name">술국</span></div><div class="item-price">15,000원</div></div>
+  <div class="item"><div><span class="item-name">군만두</span></div><div class="item-price">6,000원</div></div>
+  <div class="item"><div><span class="item-name">물만두</span></div><div class="item-price">6,000원</div></div>
+  <p class="note">※ 곱빼기 변경 시 2,000원 추가</p>
+</div>
+
+<!-- 이가네 -->
+<div id="igane" class="section">
+  <div class="cat-label">이가네 마포숯불갈비</div>
+  <div class="item"><div><span class="item-name">이가네 갈비탕</span></div><div class="item-price">15,000원</div></div>
+  <div class="item"><div><span class="item-name">불고기 물냉면</span></div><div class="item-price">13,000원</div></div>
+  <div class="item"><div><span class="item-name">불고기 비빔냉면</span></div><div class="item-price">13,000원</div></div>
+</div>
+
+<script>
+function show(id, el) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  el.classList.add('on');
+}
+</script>
+</body>
+</html>
